@@ -94,6 +94,8 @@
 				span.style.position = "absolute";
 				span.style.left = '800px';
 				span.style.top = Random(450)+'px';
+
+
 				// 设置字体大小范围
 				var min= 10;
 				var max= 20;
@@ -106,8 +108,12 @@
 				var blue = Math.floor(Math.random()*256);
 				var rgb = "("+red+","+green+","+blue+")"
 				span.style.color ="rgb"+rgb;
+
+
 				// 强制不换行
 				span.style.whiteSpace = "nowrap"
+
+				
 				var t = setInterval(function(){
 					if(parseInt(span.style.top) %2 == 0){
 						span.style.left = (parseInt(span.style.left)-2)+"px";
