@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        video{
+            position: absolute;
+            top: 10%;
+            left: 28%;
+        }
+        input{
+            position: absolute;
+            top: 60%;
+            left: 28%;
+            width: 660px;
+        }
+        button{
+            position: absolute;
+            top: 60%;
+            left: 63%;
+            width: 170px;
+        }
+        #danmu{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <video src="res/birds.mp4" controls  id="video"></video>
+    <input type="text" placeholder="请输入弹幕内容" id="input1">
+    <button id="btn">发送弹幕</button>
+    <div id="danmu"></div>
+    <script>
+        var btn = document.getElementById('btn');
+        
+        var video = document.getElementById('video');
+        var height = video.offsetHeight;
+        var width = video.offsetWidth;
+        var b = Random(150);
+        var danmu = document.getElementById('danmu');
+        btn.onclick = function(){
+            var inputVal = document.getElementById('input1').value;
+            // console.log(inputVal);
+            if(inputVal!= ""){
+                var CreaP=document.createElement("span");
+                CreaP.innerHTML(inputVal);
+                danmu.appendChild(CreaP);
+                var element=document.getElementByTagName('body');
+                element.appendChild(CreaP)
+            }
+        }
+        function Random(max){
+            return a = Math.floor(Math.random()*max);
+        }
+    </script>
+</body>
+</html>
