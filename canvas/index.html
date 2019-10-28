@@ -22,11 +22,11 @@
     <canvas id="c1" width="700" height="600"></canvas>
     <table>
         <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
+            <td class="tds">1</td>
+            <td class="tds">2</td>
+            <td class="tds">3</td>
+            <td class="tds">4</td>
+            <td class="tds">5</td>
         </tr>
     </table>
     <script src="jquery-3.4.1.js"></script>
@@ -38,16 +38,30 @@
                 var arr=$.parseJSON(res);
                 var canvas = document.getElementById("c1");
                 var ctx = canvas.getContext("2d");
+                var tds = document.getElementsByClassName('tds');
+                var names = new Array();
+                var index0 = 0;
                 var leftSpace = 0;
                 
                     $.each(arr,function(index,val){
                         var price = val.price / 10;
-                        // console.log(arrt);
+                        names[index0] = val.name;
+                        index0++;
                         ctx.fillstyle = "red";
                         var topSpace = 600-price;
                         leftSpace+=100;
+                        index+=1;
                         ctx.fillRect(leftSpace,topSpace,50,price);
+                        console.log(price);
+                        ctx.font = "20px SimHei";
+                        ctx.textBaseline = 'top';
+                        var priceText = price*10;
+                        ctx.fillText(priceText,leftSpace,topSpace-20);
                     });
+                    for (let index = 0; index < names.length; index++) {
+                        tds[index].innerText =  names[index];
+                    }
+                    
 				},
 			})
         })
