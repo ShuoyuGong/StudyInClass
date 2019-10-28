@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="c1" width="500" height="500"></canvas>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                url:"index.php",
+				success:function(res){
+                var arr=$.parseJSON(res);
+                var canvas = document.getElementById("c1");
+                var ctx = canvas.getContext("2d");
+                    $.each(arr,function(index,val){
+                        var arrt = val.price / 10;
+                        console.log(arrt);
+                        ctx.fillstyle = "black";
+                        var a = 500-arrt;
+                        console.log("11");
+                        var c= 0;
+                        c = c+50;
+                        console.log(c);
+                        ctx.fillRect(c,0,20,arrt)
+                    });
+				},
+			})
+        })
+    </script>
+</body>
+</html>
