@@ -7,12 +7,28 @@
     <title>Document</title>
     <style>
         canvas{
-            border: 1px solid black;
+            border: 1px solid pink;
+        }
+        table{
+            margin-left: 50px;
+        }
+        table tr td{
+            width:100px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <canvas id="c1" width="500" height="500"></canvas>
+    <canvas id="c1" width="700" height="600"></canvas>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+    </table>
     <script src="jquery-3.4.1.js"></script>
     <script>
         $(function(){
@@ -22,16 +38,15 @@
                 var arr=$.parseJSON(res);
                 var canvas = document.getElementById("c1");
                 var ctx = canvas.getContext("2d");
+                var leftSpace = 0;
+                
                     $.each(arr,function(index,val){
-                        var arrt = val.price / 10;
-                        console.log(arrt);
-                        ctx.fillstyle = "black";
-                        var a = 500-arrt;
-                        console.log("11");
-                        var c= 0;
-                        c = c+50;
-                        console.log(c);
-                        ctx.fillRect(c,0,20,arrt)
+                        var price = val.price / 10;
+                        // console.log(arrt);
+                        ctx.fillstyle = "red";
+                        var topSpace = 600-price;
+                        leftSpace+=100;
+                        ctx.fillRect(leftSpace,topSpace,50,price);
                     });
 				},
 			})
