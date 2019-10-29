@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 0.5px dashed darkblue;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="c1" width="500" height="500"></canvas>
+    <script>
+        var canvas = document.getElementById("c1");
+        var ctx = canvas.getContext("2d");
+        // 1.开始一个新路径
+        // ctx.beginPath();
+        // ctx.moveTo(0,0);
+        // ctx.lineTo(100,0);
+        // ctx.lineTo(0,100);
+        // ctx.closePath();
+        
+        // ctx.fill();
+
+        // ctx.moveTo(300,300);
+        // ctx.lineTo(400,500);
+        // ctx.lineTo(400,450);
+        // ctx.closePath();
+        // ctx.fill();
+        
+
+        // 圆拱形
+        // ctx.beginPath();
+        // ctx.arc(300,300,80,0,Math.PI);
+        // ctx.fill();
+
+        // ctx.beginPath();
+        // ctx.arc(100,100,80,-90*Math.PI/180,90*Math.PI/180);
+        // ctx.fill();
+
+        // ctx.beginPath();
+        // ctx.arc(100,100,80,-90*Math.PI/180,90*Math.PI/180);
+        // ctx.fill();
+
+        // ctx.beginPath();
+        // ctx.arc(300,300,80,0,Math.PI);
+        // ctx.fill();
+
+        function closeMouse(){
+            clearCanvas();
+            ctx.fillStyle = "rgb("+color()+","+color()+","+color()+")";
+            ctx.strokeStyle = "rgb("+color()+","+color()+","+color()+")";
+            ctx.beginPath();
+            ctx.arc(250,250,200,0,180*Math.PI);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(320,150,50,0,180*Math.PI);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(350,150,20,0,180*Math.PI);
+            ctx.fill();
+            ctx.beginPath();
+            // ctx.arc(350,300,5,-90*Math.PI/180,90*Math.PI/180);
+            ctx.moveTo(270,330);
+            ctx.lineTo(430,330);
+            // ctx.lineTo(350,450);
+            ctx.lineWidth = 5;
+            ctx.closePath();
+            ctx.stroke();
+            setTimeout(openMouse,1000);
+        }
+        function openMouse(){
+            ctx.fillStyle = "rgb("+color()+","+color()+","+color()+")";
+            ctx.strokeStyle = "rgb("+color()+","+color()+","+color()+")";
+            clearCanvas();
+            ctx.beginPath();
+            ctx.arc(250,250,200,50*Math.PI/180,350*Math.PI/180);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(320,150,50,0,180*Math.PI);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(350,150,20,0,180*Math.PI);
+            ctx.fill();
+            ctx.moveTo(270,300);
+            ctx.lineTo(450,215);
+            ctx.lineWidth = 5;
+            ctx.closePath();
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(350,150,20,0,180*Math.PI);
+            ctx.fill();
+            ctx.moveTo(270,300);
+            ctx.lineTo(380,400);
+            ctx.lineWidth = 5;
+            ctx.closePath();
+            ctx.stroke();
+            setTimeout(closeMouse,1000);
+        }
+        openMouse();
+        function color(){
+            return Math.floor(Math.random()*255);
+        }
+        function clearCanvas()  {  
+            var cxt=document.getElementById("c1").getContext("2d");
+            cxt.clearRect(0,0,500,500);  
+        }  
+    </script>
+</body>
+</html>
