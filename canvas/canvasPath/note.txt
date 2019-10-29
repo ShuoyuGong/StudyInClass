@@ -1,20 +1,22 @@
 1.canvas path
     path由多个坐标点组成的任意图形,图形不可见,
     可以使用描边,或者填充,让图形显示
-2.步骤:
-    ctx.beginPath() 结束上一条路径,开始一条新的路径
-    ctx.closePath() 闭合当前路径
-    ctx.moveTo(x,y) 移动至指定点
-    ctx.lineTo(x,y) 从当前点到指定点
-    ctx.arc(cx,cy,r,start,end) 绘制一个圆形       
-        -cx,cy:圆心点
-        -r:圆半径
-        -start:开始弧度
-        -end:结束弧度
-        注意:程序里面不使用角度,使用弧度
-        角度 180 360
-        弧度 PI  2PI
-        通用公式:把角度转化为弧度
-            角度*MathPI/180 = 弧度
-    -ctx.stroke():描边
-    -ctx.fill():填充
+    步骤:
+        ctx.beginPath() 结束上一条路径,开始一条新的路径
+        ctx.closePath() 闭合当前路径
+        ctx.moveTo(x,y) 移动至指定点
+        ctx.lineTo(x,y) 从当前点到指定点
+        ctx.arc(cx,cy,r,start,end) 绘制一个圆形       
+            -cx,cy:圆心点
+            -r:圆半径
+            -start:开始弧度
+            -end:结束弧度
+            注意:程序里面不使用角度,使用弧度
+            角度 180 360
+            弧度 PI  2PI
+            通用公式:把角度转化为弧度
+                角度*MathPI/180 = 弧度
+        -ctx.stroke():描边
+        -ctx.fill():填充
+
+

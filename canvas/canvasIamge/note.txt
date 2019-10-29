@@ -1,0 +1,16 @@
+1.canvas -------图片
+    canvas 属于客户端技术(运行在浏览器上),但是图片保存在服务器里,
+    要想绘制图片,必须等待它下载完成在绘制.
+    Q.图片为什么保存在服务器里?
+        A:图片有版权;图片通常数据量大
+    
+    步骤:
+        1.创建图片对象
+            var picture = new Iamge();
+        2.下载图片
+            picture.src = "IamgeName.png";
+        3.绑定事件(下载完成)
+            picture.onload = function(){}
+        4.绘制图片
+            ctx.drawIamge(picture,x,y,w,h)
+            原图大小,去掉宽高ctx.drawIamge(picture,x,y)
