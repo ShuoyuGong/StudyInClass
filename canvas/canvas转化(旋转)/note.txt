@@ -1,0 +1,9 @@
+canvas 转化 把图片旋转
+    ctx.rotate(旋转的弧度)
+    角度*Math.PI/180
+    ctx.drawImage(picture,x,y)
+
+注意:
+    当在画布上绘制一个以上元素时,绘制之前,先保存状态,绘制之后再恢复状态
+    保存画笔状态:ctx.save()
+    恢复画笔状态:ctx.restore();

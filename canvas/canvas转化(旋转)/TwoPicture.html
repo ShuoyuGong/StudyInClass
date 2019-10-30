@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="c1" width="800" height="800"></canvas>
+
+    <script>
+        var a = 0; 
+        var canvas = document.getElementById("c1");
+        var ctx = canvas.getContext("2d");
+        // 先创建两个变量保存不同飞机的旋转角度
+        var deg1 = 10;
+        var deg2 = 20;
+        // 创建图片对象
+        var picture = new Image();
+        // 下载图片
+        picture.src = "1.png";
+        // 绑定事件
+        picture.onload = function(){
+            // 创建定时器
+            // 平移原点
+            ctx.translate(200,200);
+            var t = setInterval(function(){
+                var w = picture.width;
+                var h = picture.height
+                // 绘制图片1
+                // 保存状态
+                ctx.save();
+                // 旋转10°
+                ctx.rotate(deg1*Math.PI/180);
+                ctx.drawImage(picture,0-w/2,0-h/2);
+                // 恢复状态
+                ctx.restore();
+                deg1+=10;
+
+
+                // 绘制图片2
+                // 保存状态
+                ctx.save();
+                 // 平移原点
+                ctx.translate(300,0);
+                // 旋转10°
+                ctx.rotate(deg2*Math.PI/180);
+                ctx.drawImage(picture,0-w/2,0-h/2);
+                // 恢复状态
+                ctx.restore();
+                deg2+=20;
+            },50)
+        }
+    </script>
+</body>
+</html>

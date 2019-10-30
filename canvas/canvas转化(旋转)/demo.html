@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="c1" width="800" height="800"></canvas>
+
+    <script>
+        var a = 0; 
+        var canvas = document.getElementById("c1");
+        var ctx = canvas.getContext("2d");
+        // 创建图片对象
+        var picture = new Image();
+        var picture1 = new Image();
+        // 下载图片
+        picture.src = "1.png";
+        picture1.src = "1.png";
+        // 绑定事件
+        picture.onload = function(){
+            ctx.translate(200,200);
+            var w = picture.width;
+            var h = picture.height;
+            // 旋转图片
+            setInterval(function(){
+                ctx.clearRect(-400,-400,800,800);
+                if(a == 360){
+                    a--;
+                }else{
+                    a++;
+                }
+                ctx.rotate(a*Math.PI/180);
+                ctx.drawImage(picture,0-w/2,0-h/2);
+            },10)
+        }
+    
+    </script>
+</body>
+</html>

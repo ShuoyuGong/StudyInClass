@@ -29,6 +29,11 @@
         // 监听点击事件
 canvas.addEventListener("mousemove", function(event) {
     getMousePos(canvas, event);
+    // clearCanvas();
+});
+
+canvas.addEventListener("click", function(event) {
+    // getMousePos(canvas, event);
     clearCanvas();
 });
 
@@ -47,7 +52,7 @@ function getMousePos(canvas, event) {
     // 4.绘制图片
     var h = picture.height;
     var w = picture.width;
-        ctx.drawImage(picture,x,y,100,100);
+        ctx.drawImage(picture,x,y,30,30);
     }
     // console.log("x:"+x+",y:"+y);
 }
