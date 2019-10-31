@@ -1,0 +1,26 @@
+H5 SVG绘图
+                canvas                  SVG
+类型            2d位图                  2d矢量图
+如何绘图        js代码                  标签绘图
+事件绑定        只能绑定到画布           每个图形都可以绑定事件
+应用场景        特效,小游戏              地图
+
+svg开发流程
+    -创建画布
+        -<svg id = "s1" width ="500" height = "500"></svg>
+    -在画布中添加标签
+    <!-- 创建矩形 -->
+    <rect x = "" y = "" width = "" height = "" fill = "填充颜色" fill-opacity = "0.5" stroke = "描边颜色" stroke-opacity = "0.5"> </rect>
+
+注意:SVG特性
+    1.所有图形默认填充为黑色
+    2.svg图形的样式可可以使用属性声明,也可以使用css样式声明,但是css只能声明使用svg专用样式,
+    不能使用css样式,比如,边框只能使用stroke 不能使用border
+    3.图形可以使用js赋值,但不能使用htmlDom,只能使用核心Dom
+        比如:r1.width = 300;r1.height = 300 -------error
+            r1.setAttribute('width','300')
+            r1.setAttribute('height','300')-------ok
+    4.动态加载svg图形
+        1.html字符串拼接
+            
+        2.创建对象

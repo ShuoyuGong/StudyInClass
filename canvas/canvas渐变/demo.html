@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            background-color: ghostwhite;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="c1" height="800" width="800"></canvas>
+
+    <script>
+        var canvas = document.getElementById("c1");
+        var ctx = canvas.getContext("2d");
+        // 1.创建渐变对象
+        var g = ctx.createLinearGradient(0,0,800,100);
+        // 2.添加颜色点
+        g.addColorStop(0,"#f00");
+        g.addColorStop(0.5,"#0f0");
+        g.addColorStop(1,"#00f");
+        // 3.将渐变对象赋值样式(描边.填充)
+        ctx.fillStyle = g;
+        // 4.绘制图形,文字,矩形
+        ctx.fillRect(0,0,800,100);
+
+        var str = "love you";
+        ctx.font= "40px 黑体";
+        ctx.fillText (str,600,200);
+    </script>
+</body>
+</html>

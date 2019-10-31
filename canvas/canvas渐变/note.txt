@@ -1,0 +1,6 @@
+canvas渐变
+    1.创建渐变对象
+        var g = ctx.createLinearGradient(x,y,w,h);
+    2.添加颜色点
+    3.将渐变对象赋值样式(描边.填充)
+    4.绘制图形,文字,矩形

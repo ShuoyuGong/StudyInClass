@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <svg id = "s1" height= "800" width = "800">
+    </svg>
+
+    <script>
+        var svg = document.getElementById("s1");
+        for (let i = 0; i <= 50; i++) {
+            var c = document.createElementNS("http://www.w3.org/2000/svg","circle");
+            c.setAttribute("r",randomNum(30));
+            c.setAttribute("cx",randomNum(700));
+            c.setAttribute("cy",randomNum(700));
+            c.setAttribute("fill-opacity",Math.random());
+            c.setAttribute("fill","#"+randomNum(999)+"");
+            svg.appendChild(c);
+
+            c.onclick = function(){
+                this.onclick = null;
+                var t = setInterval(()=>{
+                    // 获取点元素
+                    var r = this.getAttribute("r");
+                    // 设置大小
+                    this.setAttribute("r",r*1.05);
+                    // 获取透明度
+                    var op = this.getAttribute("fill-opacity");
+                    this.setAttribute("fill-opacity",op*0.8);
+                    // 删除节点
+                    if(op < 0.05){
+                        svg.removeChild(this);
+                        clearInterval(t);
+                    }
+                },50)
+            }
+        }
+        function randomNum(num){
+            return Math.floor(Math.random()*num);
+        }
+    </script>
+</body>
+</html>
