@@ -1,0 +1,12 @@
+svg----------折线
+<polyline points = "50,50,70,60,80,96"></polyline>
+points 折线点   书写格式  点1 点2 
+
+注意:手动加上填充透明  fill = "transparent"
+
+
+文本:
+<text x = "" y = ""  font-size =""  fill = ""  stroke = "">文本内容 </text>
+
+图片:
+<image xlink:href = ""  x = ""  y = "" width = ""  height = ""></image>

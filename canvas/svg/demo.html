@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        svg{
+            background-color: gainsboro;
+        }
+    </style>
+</head>
+<body>
+    <svg id = "s1" width = "800" height = "800">
+        <!-- html创建矩形 -->
+        <!-- <rect x = "0" y = "0" width = "100" height = "100" fill = "red" 
+        fill-opacity = "0.5"> </rect>
+        <rect x = "0" y = "700" width = "100" height = "100" fill = "red" 
+        fill-opacity = "0.5"> </rect>
+        <rect x = "700" y = "700" width = "100" height = "100" fill = "red" 
+        fill-opacity = "0.5"> </rect>
+        <rect x = "700" y = "0" width = "100" height = "100" fill = "red" 
+        fill-opacity = "0.5"> </rect>
+        <rect x = "350" y = "350" width = "100" height = "100" fill = "red" 
+        fill-opacity = "0.5"> </rect> -->
+
+
+        <!-- js dom创建矩形 -->
+        <!-- <rect id = "r1"> </rect>  -->
+    </svg>
+
+    <script>
+    //     var r1 = document.getElementById("r1");
+    //     r1.setAttribute("x",0);
+    //     r1.setAttribute("y",0);
+    //     r1.setAttribute("width",100);
+    //     r1.setAttribute("height",100);
+    //     r1.setAttribute("fill","red");
+    //     r1.setAttribute("fill-opacity",0.5);
+
+    //  js dom创建矩形
+    var s1 = document.getElementById("s1");
+    // var rect = "<rect  x = '350' y = '350' width = '100' height = '100' fill = 'red'></rect>";
+    //     s1.innerHTML = rect;
+
+    // js对象动态创建
+    var rect = document.createElementNS("http://www.w3.org/2000/svg","rect");
+    rect.setAttribute("x",0);
+    rect.setAttribute("y",0);
+    rect.setAttribute("width",30);
+    rect.setAttribute("height",300);
+    rect.setAttribute("fill","red");
+    rect.setAttribute("fill-opacity",0.5);
+    s1.appendChild(rect);
+    </script>
+</body>
+</html>
