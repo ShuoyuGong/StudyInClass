@@ -12,25 +12,44 @@
     <script src="echarts.js"></script>
     <script>
         $(function(){
+            
             var main = document.getElementById("main");
-            var myecharts = echarts.init(main, 'dark');
+            var myecharts = echarts.init(main, 'light');
+            myecharts.showLoading();
+            var Name = new Array();
+            var Price = new Array();
             $.ajax({
                 url:"demo2.php",
 				success:function(res){
+                    myecharts.hideLoading();
                     var arr=$.parseJSON(res);
-                    // console.log(arr[11].salesMouth);
+                    console.log(res);
                     for (let i = 0; i < arr.length; i++) {
-                        
+                        Name[i] = arr[i].salesMouth;
+                        Price[i] = arr[i].salesMoney;
+                    }
+                    console.log(Price);
                         var option = {
+                        
+                        itemStyle: {
+                            // 阴影的大小
+                            shadowBlur: 1000,
+                            // 阴影水平方向上的偏移
+                            shadowOffsetX: 0,
+                            // 阴影垂直方向上的偏移
+                            shadowOffsetY: 0,
+                            // 阴影颜色
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        },
                         title:{text:"六味地黄丸2019年统计销售额"},
-                        xAxis:arr[i].salesMouth,
+                        xAxis:{data:Name},
                         yAxis:{},
                             series:[{
-                                type:"line",    //bar:柱形图
-                                data:arr[i].salesMoney    
+                                type:"bar",    //bar:柱形图
+                                color: ['#2f4554', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
+                                data:Price
                             }]
                         };
-                    }
                     
                     myecharts.setOption(option);  
 			},

@@ -1,0 +1,42 @@
+geolocation :地理定位使用js获取浏览器所处地理位置坐标
+(经度,纬度,海拔,速度)数据
+用于LBS Location Base Server
+
+Q:手机浏览器怎么获取定位信息?
+A:  1.首选,手机GBS芯片与网络连接起来,(民用)定位精度(米),(军用)定位
+    精度(厘米)
+    2.手机通讯基站
+
+HTML5提供了新的对象,可以获取当前浏览器的定位信息
+    windows.navigator.geolocation{
+        getCurrentPostion:function(){}//获取当前定位
+        watchPostion:function(){}//监听位置变化
+        clearPostion:function(){}//取消位置监听
+    }
+
+国内三家地理位置定位服务商
+    1.百度
+    2.高德地图
+    3.腾讯地图
+
+地理定位--百度地图
+    1.注册百度开发者账户
+    2.百度会给你分配一个AccessKey密钥
+        u70A5pnNrRtRT1XAgwM5jL2YIVj1Gv97
+    3.在自己网站中嵌入百度的API
+        <script src = "http://api.abidu.....ak = "密钥""></script>
+        //创建地图容器
+        <div id = "container"></div>
+    4.创建地图对象
+        var map = new BMap.Map("container");
+    5.创建一个坐标点
+        var point = new BMap.point(经度,纬度);
+    6.初始化地图,并且指定显示级别(1-19)
+        map.centerAndZoom(point,15)
+    7.添加扩展控件
+        (1):标准地图控件
+            map.addControl(new BMap.NavigationControl());
+        (2).一个比例尺控件
+            map.addControl(new BMap.ScaleControl());    
+        (3).变换地图显示方式(2D,卫星,3D)    
+            map.addControl(new BMap.MapTypeControl()); 

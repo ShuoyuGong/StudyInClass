@@ -5,6 +5,9 @@ $pwd="root";
 $pdo = new PDO($dsn, $user, $pwd); 
 $sql="select i.medName,s.salesYear,s.salesMouth,s.salesMoney from med_info as i,med_sales as s where i.medName = 'liuwei'";
 $arr= $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+// foreach ($arr as $value) {
+//     $brr = $value;
+// }
 echo json_encode($arr);
 
 
