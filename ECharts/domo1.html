@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main" style="width: 800px; height: 800px; border: 1px solid red;"></div>
+    <script src="echarts.js"></script>
+    <script>
+        // 获取容器
+            var main = document.getElementById("main");
+            var myecharts = echarts.init(main, 'dark');
+        // 创建配置项
+            // 柱形图或折线图
+            // var option = {
+            //     title:{text:"入门实例"},
+            //     xAxis:{data:["衬衣","袜子","包包","表"]},
+            //     yAxis:{},
+            //     series:[{
+            //         type:"line",    //bar:柱形图
+            //         data:[120,248,89,500]    
+            //     }]
+            // };
+
+
+            // 汽车仪表盘
+            // var option = {
+            //     series:[{
+            //         type:"gauge",
+            //         datail:{formatter:"{value}%"},
+            //         data:[{value:89,name:"汽车速度"}],
+            //         }
+            //     ]
+            // }
+
+
+
+            //饼形图
+            var option = {
+                series:[{
+                    type:"pie",
+                    radius:"50%",    //半径
+                    center:["50%","50%"],    //圆心位置     
+                    data:[
+                        {value:325,name:"广告"},
+                        {value:20,name:"传媒"},
+                        {value:120,name:"视频"},
+                        {value:310,name:"媒体"}
+                    ]
+                }],
+            }
+        myecharts.setOption(option);
+    </script>
+</body>
+</html>

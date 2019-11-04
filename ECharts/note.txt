@@ -1,0 +1,20 @@
+Echarts
+    1.下载并引用echarts.js文件
+    2.创建图形容器<div id = "main" style = "width:height"></div>
+    3.通过JS获取容器,并且创建echarts对象
+        var main = document.getElementById("main");
+        //创建echarts对象,并且初始化
+        var myEcharts = echarts.init(main);
+    4.创建配置项
+        var option = {
+            title:"echarts入门案例",//echarts标题
+            x轴内容 xAxis:{data:["衬衣","袜子","宝宝"]}
+            y轴内容 yAxis:{},
+            serces:[
+                type:"bar",      //柱形图
+                data"[100,20,300];
+            ]
+
+        }
+    5.将配置项添加到echarts对象中
+        myEcharts.setOption(option);

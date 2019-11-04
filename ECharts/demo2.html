@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECharts</title>
+</head>
+<body>
+    <div id="main" style="width: 800px; height: 800px ; border: 1px solid slategrey;"></div>
+    <script src="jquery-3.4.1.js"></script>
+    <script src="echarts.js"></script>
+    <script>
+        $(function(){
+            var main = document.getElementById("main");
+            var myecharts = echarts.init(main, 'dark');
+            $.ajax({
+                url:"demo2.php",
+				success:function(res){
+                    var arr=$.parseJSON(res);
+                    // console.log(arr[11].salesMouth);
+                    for (let i = 0; i < arr.length; i++) {
+                        
+                        var option = {
+                        title:{text:"六味地黄丸2019年统计销售额"},
+                        xAxis:arr[i].salesMouth,
+                        yAxis:{},
+                            series:[{
+                                type:"line",    //bar:柱形图
+                                data:arr[i].salesMoney    
+                            }]
+                        };
+                    }
+                    
+                    myecharts.setOption(option);  
+			},
+			})
+        })
+    </script>
+</body>
+</html>
