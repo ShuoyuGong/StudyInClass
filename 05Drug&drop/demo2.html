@@ -7,54 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="2.png" width="200px" height="200px" id="waste" draggable="true">
-    <img src="bag.png" width="50px" height="50px" class="objects" draggable="true">
-    <img src="phone.png" width="50px" height="50px" class="objects" draggable="true">
-    <img src="people.png" width="50px" height="50px" class="objects" draggable="true">
+    <img src="2.png" width="100px" height="100px" id="waste">
+    <br>
+    <img src="bag.png" width="50px" height="50px" draggable="true" ondragstart="start(event)">
+    <img src="phone.png" width="50px" height="50px" draggable="true" ondragstart="start(event)">
+    <img src="people.png" width="50px" height="50px" draggable="true" ondragstart="start(event)">
     <script>
         // 获得拖拽源对象
         var waste = document.getElementById("waste");
-        var objects = document.getElementsByClassName("objects");
-        // 添加事件
-        // console.log(objects);
-        // objects.ondragstart = function(){
-        //     console.log("开始拖拽");
-        // }
-        // objects.onclick = function(){
-        //     console.log("开始拖拽");
-        // }
-
-        // picture.ondrag = function(){
-        //     console.log("正在拖拽");
-        // }
-
-        // picture.ondragend = function(){
-        //     console.log("拖拽结束");
-        // }
-
-        // // ----------
-        // picture2.ondragenter = function(){
-        //     console.log("拖拽进入");
-        // }
-
-        // picture2.ondragover = function(e){
-        //     // 阻止默认行为
-        //     e.preventDefault();
-        //     console.log("拖拽悬停");
-        // }
-
-        // picture2.ondragleave = function(){
-        //     console.log("拖拽离开");
-        // }
-        // objects.ondrop = function(){
-        //     // var a = this;
-        //     console.log("111");
-        //     // picture.remove();
-        // }
-
-        function drop1(){
-            // var objects = document.getElementsByClassName("objects");
-            console.log("111");
+        var object;
+        function start(e){
+            object = e.target;
+        }
+        waste.ondragover = function(e){
+            // 阻止默认行为
+            e.preventDefault();
+        }
+        waste.ondrop = function(){
+            object.remove();
         }
     </script>
 </body>

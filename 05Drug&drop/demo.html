@@ -18,13 +18,13 @@
             console.log("开始拖拽");
         }
 
-        picture.ondrag = function(){
-            console.log("正在拖拽");
-        }
+        // picture.ondrag = function(){
+        //     console.log("正在拖拽");
+        // }
 
-        picture.ondragend = function(){
-            console.log("拖拽结束");
-        }
+        // picture.ondragend = function(){
+        //     console.log("拖拽结束");
+        // }
 
         // ----------
         picture2.ondragenter = function(){
@@ -37,12 +37,14 @@
             console.log("拖拽悬停");
         }
 
-        picture2.ondragleave = function(){
-            console.log("拖拽离开");
-        }
+        // picture2.ondragleave = function(){
+        //     console.log("拖拽离开");
+        // }
         picture2.ondrop = function(){
             console.log("拖拽释放");
+            console.log(picture);
             picture.remove();
+            
         }
     </script>
 </body>
