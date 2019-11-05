@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="1.png" width="50px" height="50px" id="p1" draggable="true">
+    <img src="2.png" width="200px" height="200px" id="p2" draggable="true">
+    <script>
+        // 获得拖拽源对象
+        var picture = document.getElementById("p1");
+        var picture2 = document.getElementById("p2");
+        // 添加事件
+        picture.ondragstart = function(){
+            console.log("开始拖拽");
+        }
+
+        picture.ondrag = function(){
+            console.log("正在拖拽");
+        }
+
+        picture.ondragend = function(){
+            console.log("拖拽结束");
+        }
+
+        // ----------
+        picture2.ondragenter = function(){
+            console.log("拖拽进入");
+        }
+
+        picture2.ondragover = function(e){
+            // 阻止默认行为
+            e.preventDefault();
+            console.log("拖拽悬停");
+        }
+
+        picture2.ondragleave = function(){
+            console.log("拖拽离开");
+        }
+        picture2.ondrop = function(){
+            console.log("拖拽释放");
+            picture.remove();
+        }
+    </script>
+</body>
+</html>

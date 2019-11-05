@@ -1,5 +1,16 @@
 拖拽源对象(会动);
-dragstart      拖拽开始
-
-
+ondragstart      拖拽开始
+ondrag           正在拖拽
+ondragend        拖拽结束
+ondragenter      拖拽进入
+ondragover       拖拽悬停
+ondragleave      拖拽离开
+ondrop           拖拽释放
+完整过程 dragstart*1+drag*n+dragend*1
 拖拽目标对象(不会动);
+
+
+
+
+Q:dragover事件有默认行为,悬停结束,立马调用离开事件,释放事件就永远不会触发
+A:阻止悬停事件的默认行为
