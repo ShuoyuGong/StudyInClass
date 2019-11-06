@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="login.html" style="display: none;" id="login">请登录</a>
+    <a href="loginout.html" style="display: none;" id = "loginout">退出</a>
+
+    <script>
+        var login = document.getElementById("login");
+        var loginout = document.getElementById("loginout");
+        var username = sessionStorage.getItem("username");
+        console.log(username);
+        if (username != null){
+            loginout.style.display = "block";
+            console.log(username);
+            alert("欢迎"+username+"登录!");
+        }else{
+            login.style.display = "block";
+        }
+    </script>
+</body>
+</html>

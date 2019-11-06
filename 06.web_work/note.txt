@@ -1,0 +1,24 @@
+注意!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!:
+    1.worker只能通过服务器运行,不可本地直接双击运行
+    2.浏览器不允许worker对象执行dom/bom节点,浏览器只允许UI主线程操作Dom,worker
+    只负责js部分
+
+数据传递  worker -> ui
+    1.worker线程发送信息给UI线程
+        Q:worker发送,写在什么位置?
+        A:postMessage("StringMsg");
+    2.UI接收
+        var w = new Worker('test.js');
+        w.onmessage = funciton(e){
+            e.data;  接收过来的数据
+        }
+
+
+UI -> Worker
+    1.UI发消息
+        var w = new Worker(test.js);
+        w.postMessage("StringMsg");
+    2.Worker接收消息
+        onmessage = function(e){
+            e.data; 接收过来的数据
+        }

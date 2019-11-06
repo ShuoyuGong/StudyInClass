@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="inp" style="width: 150px;height:20px;border: 1px solid blue;">
+    <br>
+    <button id="btn">开始计算</button>
+    <div id="div1" style="width: 150px;height:150px;border: 1px solid red;"></div>
+
+    <script>
+        var w =  new Worker("demo2.js");
+        var inp = document.getElementById("inp");
+        var btn = document.getElementById("btn");
+        var div1 = document.getElementById("div1");
+        btn.onclick = function(){
+            var text = inp.value;
+            w.postMessage(text);
+        }
+        w.onmessage = function(e){
+            div1.innerText = e.data;
+        }
+        
+
+    </script>
+</body>
+</html>

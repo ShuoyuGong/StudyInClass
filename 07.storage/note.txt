@@ -1,0 +1,38 @@
+在浏览器中储存当前用户专有数据,购物车,定制样式
+    1.cookie技术,浏览器兼容性好,大小不能超过4kb,操作相对复杂
+    2.flash储存,依赖于flash播放器储存
+    3.h5 webstorage 不能超过8mb 操作简单,兼容还可以
+    4.indexDB,可以储存大量数据,但是不是标准技术
+
+    session会话
+        操作过程:
+            浏览器打开某一个网站的第一个页面(会话开始)
+            中间可能打开很多页面(会话中)
+            直至关闭浏览器(会话结束)
+        整个过程称为"浏览器与web服务器的一次会话"
+    
+    webstorage 提供两个对象储存数据
+        1.sessionStorage
+        将数据保存sessionStorage,会话开始保存数据
+        同一个会话中,其他网页可以获取seesionStorage保存的数据,一旦关闭浏览器(会话结束)
+            sessionStorage数据清空
+
+    储存数据使用方法:
+        1.sessionStorage[key] = value;
+        2.sessionStorage.setItem(key,value);
+
+    获取数据使用方法:
+        1.var value = sessionStorage[key];
+        2.var value = sessionStorage.getItem(key);
+
+    按键位删除数据使用方法:
+        sessionStorage.remove(key);
+    
+    清除所有数据:
+        sessionStorage.clear();
+
+    数据个数:
+        sessionStorage.length();
+
+    给出下标,获取key
+        var key = sessionStorage.key(i)
