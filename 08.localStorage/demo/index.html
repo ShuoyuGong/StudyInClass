@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body id="body1">
+    <select id="select1">
+        <option value="">请选择主题</option>
+        <option value="blue">蔚蓝天空</option>
+        <option value="pink">芭比公主</option>
+        <option value="black">暗黑主题</option>
+    </select>
+
+
+    <script>
+        var color = document.getElementById("select1");
+        var body = document.getElementById("body1");
+        var lS = localStorage.getItem("color");
+        body.style.backgroundColor = lS;
+        color.onchange = function(){
+            var value = color.value;
+            if(value == "blue"){
+                body.style.backgroundColor = "#33a";
+                localStorage.setItem("color","#33a");
+            }else if(value == "pink"){
+                body.style.backgroundColor = "#a3a";
+                localStorage.setItem("color","#a3a");
+            }
+            else if(value == "black"){
+                body.style.backgroundColor = "#eee";
+                localStorage.setItem("color","#eee");
+            }
+        }
+    </script>
+</body>
+</html>

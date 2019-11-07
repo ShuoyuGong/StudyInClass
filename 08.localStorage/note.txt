@@ -1,0 +1,24 @@
+localStorage 本地储存(跨会话级储存)---永久储存
+方法:
+    储存数据使用方法:
+        1.localStorage[key] = value;
+        2.localStorage.setItem(key,value);
+
+    获取数据使用方法:
+        1.var value = localStorage[key];
+        2.var value = localStorage.getItem(key);
+
+    按键位删除数据使用方法:
+        localStorage.remove(key);
+    
+    清除所有数据:
+        localStorage.clear();
+
+    数据个数:
+        localStorage.length();
+
+    给出下标,获取key
+        var key = localStorage.key(i);
+
+注意:只要localStorage数据被修改,就会触发window.onStorage事件
+    我们可以通过过此事件用来监听localStorage数据改变的目标
