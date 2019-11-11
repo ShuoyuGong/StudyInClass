@@ -18,11 +18,17 @@
         var object;
         function start(e){
             object = e.target;
+            
         }
+
+
         waste.ondragover = function(e){
             // 阻止默认行为
             e.preventDefault();
         }
+
+
+        
         waste.ondrop = function(){
             object.remove();
         }
