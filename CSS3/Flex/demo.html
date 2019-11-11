@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        #container{
+            border: 1px solid red;
+            width: 1000px;
+            margin: 0 auto;
+        }
+        #container #row1{
+            /* justify-content: flex-start; */
+            flex-flow: row nowrap;
+            display: flex;
+        }
+        #container #row1 #text1 {
+            padding: 10px 0px 0px 10px;
+            width: 200px;
+        }
+        #container #row1 #text1 #img1{
+            width: 300px;
+            justify-content: flex-end;
+            display: inline-block;
+        }
+        .grayFont{
+            font-size: 10px;
+            color: gray;
+        }
+        .price{
+            font-size: 25px;
+            color: #0AA1ED;
+        }
+        .btn{
+            text-align: center;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 2px;
+            cursor: pointer;
+            background: -webkit-linear-gradient(top, #27b1f6 0%, #0aa1ed 100%);
+            display: inline-block;
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+            <div id="row1">
+                <div id="text1">
+                    <h2>Apple MacBook</h2>
+                    <h2>Air系列</h2>
+                    <p class="grayFont">酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</p>
+                    <p class="price">￥6988.00</p>
+                    <button class="btn">查看详情</button>
+                    <img src="img/mac_book.png" id="img1">
+            </div>
+    </div>
+</body>
+</html>

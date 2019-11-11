@@ -1,0 +1,48 @@
+CSS3 弹性布局
+    Q:什么叫做弹性布局?
+    A:弹性布局是一种布局方式,主要解决某元素中子元素的布局方式,为布局提供最大的灵活性.
+
+弹性布局相关术语:
+    1.容器
+        要布局的子元素的父元素,称为容器,在容器中写display:flex;
+    2.项目
+        要布局的子元素称之为项目
+    3.主轴
+        项目的排列方向,称之为主轴(水平,垂直),如果项目按照横向排列,X轴是主轴;如果项目按照纵向排列,y轴是主轴;
+    4.交叉轴
+        与主轴垂直相交的方向叫做交叉轴
+    
+语法:
+    1.将元素变成弹性布局,它所有的元素将变成项目,按照弹性布局的方式排列显示
+        display 取值:flex 将块级元素变成容器
+        display 取值:inline-flex 将行级元素变成容器
+
+    2.元素设置为flex容器之后,子元素的一些样式属性会失效:
+        例如:float/clear/vertical-align
+        子元素允许我们改变尺寸(项目是行级元素的话,也可以设置尺寸)
+        容器的对齐方式text-align会失效
+
+属性(设置在容器上)
+    1.flex-direction:主轴方向
+        值1:默认row,主轴是X轴,主轴的起点是左边
+        值2:column 主轴是Y轴,主轴的起点是顶端
+        值3:row-reverse 主轴是X轴,主轴的起点是右边
+        值4:column-reverse 主轴是Y轴,主轴的起点是底端
+    2.flex-wrap:当主轴排列不下,所有项目的排列方式
+        值1:nowrap 默认值,不换行,项目会自动压缩
+        值2:wrap 空间不够,自动换行,项目不会被压缩
+        值3:wrap-reverse 换行+反转
+    3.flex-flow:是flex-direction和flex-wrap的缩写方式
+        值:direction wrap
+        EX:flex-flow:row wrap;
+
+
+属性(设置在项目上)
+    1.justify-content:设置项目的对齐方式
+        值1:space-between 两端对齐
+        值2:space-around 每个间距相同
+        值3:flex-start 主轴起点对齐
+        值4:flex-end 主轴终点对齐
+        值5:center 主轴居中对齐
+
+
