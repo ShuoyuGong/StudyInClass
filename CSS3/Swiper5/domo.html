@@ -9,6 +9,7 @@
         *{
             margin: 0;
             padding: 0;
+            list-style: none;
         }
         .swiper-container {
             width: 100%;
@@ -40,6 +41,12 @@
             100%{-webkit-transform:rotate(360deg);}
         }
     /* ********音乐Png旋转结束*********** */
+        .ani div .leftInfo li{
+            margin-top: 20%;
+        }
+        .ani div .rightInfo li{
+            margin-top: 10%;
+        }
     </style> 
 </head>
 <body>
@@ -50,18 +57,59 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <!-- *********第一屏********** -->
-                <div class="swiper-slide">
+                <!-- <div class="swiper-slide">
                     <img src="img/top.webp" class="Top_Img ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s">
                     <img src="img/resume.webp" class="Top_Img ani" style="width:100%;position: absolute;top: 15%;" swiper-animate-effect="zoomIn" swiper-animate-duration="2s">
                     <img src="img/buttom.webp" class="Buttom_Img ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s">
-                </div>
+                </div> -->
                 <!-- *********第二屏********** -->
-                <div class="swiper-slide">
-                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">内容</p>
-                </div>
+                <!--<div class="swiper-slide">
+                    <img src="img/top.webp" class="Top_Img ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s">
+                     基本资料Div
+                    <div class="ani" style="text-align:center;width:70%;height: 10%;position: absolute;top: 3%;background-color: rgb(202, 238, 229);z-index: 10;margin: 0 15%;" swiper-animate-effect="fadeIn" swiper-animate-duration="1s">
+                        <p style="font-size: 60px;margin-top:3%;" class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="3s">基本资料</p>
+                        <p style="font-size: 40px;" class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="3s">(Basic Material)</p>
+                    </div>
+                    <!-- 本人照片
+                    <img src="" alt="">
+                    <!-- 详细信息
+                    <div class="ani" style="font-size:40px;width:100%;height: 55%;position: absolute;top: 45%;background-color: rgba(202, 238, 229,0.5);z-index: 10;" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s">
+                        <div class="ani" style="text-align: left;width: 33%;height: 100%;position:absolute;float: left;margin-left: 2%;" swiper-animate-effect="rotateInDownLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
+                            <ul class="leftInfo">
+                                <li>姓名:龚烁宇</li>
+                                <li>性别:男</li>
+                                <li>民族:汉</li>
+                                <li>学历:大专</li>
+                                <li>出生日期:2000.1</li>
+                                <li>健康状况:健康</li>
+                            </ul>
+                        </div>
+                        <div class="ani" style="text-align: right;width: 63%;height: 100%;float: right;position: absolute;margin-left: 35%;margin-right: 2%;margin-top: 1%;" swiper-animate-effect="rotateInDownRight" swiper-animate-duration="1s" swiper-animate-delay="1s">
+                            <ul class="rightInfo">
+                                <li>专业:软件技术(PHP)</li>
+                                <li>毕业学校:河南职业技术学院</li>
+                                <li>地址:郑州金水区龙子湖校区</li>
+                                <li>爱好:台球/篮球</li>
+                                <li>联系电话:17630345220</li>
+                                <li>电子邮件:2788696894@qq.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img src="img/buttom.webp" class="Buttom_Img ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s">
+                </div> -->
                 <!-- *********第三屏********** -->
                 <div class="swiper-slide">
-                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">内容</p>
+                    <img src="img/top.webp" class="Top_Img ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s">
+                    <div class="ani" style="text-align:center;width:70%;height: 10%;position: absolute;top: 10%;background-color: rgb(202, 238, 229);z-index: 10;margin: 0 15%;" swiper-animate-effect="fadeIn" swiper-animate-duration="1s">
+                        <p style="font-size: 60px;margin-top:3%;" class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="3s">求职意向</p>
+                        <p style="font-size: 40px;" class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="3s">(Objective)</p>
+                    </div>
+
+                    <div class="ani" style="text-align:center;width:70%;height: 10%;position: absolute;top: 50%;background-color: rgb(202, 238, 229);z-index: 10;margin: 0 15%;" swiper-animate-effect="fadeIn" swiper-animate-duration="1s">
+                            <p style="font-size: 60px;margin-top:3%;" class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="3s">教育背景</p>
+                            <p style="font-size: 40px;" class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="3s">(Eduvation Background)</p>
+                    </div>
+                    <img src="img/buttom.webp" class="Buttom_Img ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s">
                 </div>
             </div>
         </div>
